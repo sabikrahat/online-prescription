@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" href="../assets/icon.png">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+
+    <!-- Title -->
+    <title>Login</title>
+
+    <link rel="stylesheet" href="../css/authenticate.css">
+
+</head>
+
+<body>
+
+    <div class="authenticate-bg">
+
+        <!-- main body -->
+
+        <div class="custom-center">
+            <div class="rounded-card container square-box d-flex justify-content-center align-items-center">
+
+                <form method="POST" action="../php/login.php">
+                    <div class="mb-3 text-center">
+                        <h5> Login yourself to Stay Connected</h5>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+                    </div>
+                    <div class="mb-2 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isRememberChecked">
+                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                    </div>
+                    <div class="mb-2">
+                        <h7> Don't have an account?</h7>
+                        <h7><a href="register.html">Register Now</a></h7>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+
+            </div>
+        </div>
+
+        <!-- end of main body -->
+    </div>
+
+    <script src="../../bootstrap/js/others/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../bootstrap/js/others/popper.min.js"></script>
+    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
