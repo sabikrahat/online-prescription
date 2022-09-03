@@ -23,9 +23,11 @@ if (mysqli_query($conn, $sql)) {
         setcookie("email", $email, $expire_time);
         setcookie("password", $password, $expire_time);
     }
-    header("location: ../html/home.html");
+    header("location: ../frontend/home.html");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     // header("location: ../html/register.html");
     show_alert("Error: " . $sql . "<br>" . mysqli_error($conn));
 }
+
+mysqli_close($conn);

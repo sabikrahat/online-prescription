@@ -23,9 +23,11 @@ if ($count == 1) {
         setcookie("email", $email, $expire_time);
         setcookie("password", $password, $expire_time);
     }
-    header("location: ../html/home.html");
+    header("location: ../frontend/home.html");
 } else {
     echo "Wrong Username or Password";
     // header("location: ../html/login.html");
     show_alert("Wrong email or Password");
 }
+
+mysqli_close($conn);

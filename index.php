@@ -6,8 +6,8 @@ session_start();
 
 if (isset($_SESSION['email'])) {
     echo 'Welcome ' . $_SESSION['email'];
-    header("location: modules/html/home.html");
+    header("location: modules/frontend/home.html");
 } else {
     echo 'You are not logged in!';
-    header("location: modules/html/login.html");
+    header("location: modules/frontend/login.html");
 }

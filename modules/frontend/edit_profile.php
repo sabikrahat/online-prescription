@@ -1,3 +1,7 @@
+<?php
+include '../backend/profile_data.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +12,7 @@
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
 
     <!-- Title -->
-    <title>Register</title>
+    <title>Update Profile</title>
 
     <link rel="stylesheet" href="../css/authenticate.css">
 
@@ -23,46 +27,38 @@
         <div class="custom-center">
             <div class="rounded-card container square-box d-flex justify-content-center align-items-center">
 
-                <form method="POST" action="../php/register.php">
+                <form method="POST" action="../backend/update_profile.php">
                     <div class="mb-4 text-center">
-                        <h5>Register yourself to Start your Journey</h5>
+                        <h5>Update your Profile Carefully </h5>
                     </div>
                     <div class="mb-2">
                         <label for="exampleInputName" class="form-label">Full Name</label>
                         <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp"
-                            name="name" required>
+                            name="name" required value=<?php echo $name ?>>
                         <div id="nameHelp" class="form-text">Name as per your NID Card or Certificates</div>
                     </div>
+                    <br>
                     <div class="row mb-2">
                         <div class="col-md-6">
                             <label for="exampleInputDegree" class="form-label">Degree</label>
-                            <input type="text" class="form-control" id="exampleInputDegree" name="degree" required>
+                            <input type="text" class="form-control" id="exampleInputDegree" name="degree" required
+                                value=<?php echo $degree ?>>
                         </div>
                         <div class="col-md-6">
                             <label for="exampleInputSpecialism" class="form-label">Specialism</label>
                             <input type="text" class="form-control" id="exampleInputSpecialism" name="specialism"
-                                required>
+                                required value=<?php echo $specialism ?>>
                         </div>
                     </div>
+                    <br>
                     <div class="mb-2">
                         <label for="exampleInputEmail" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"
-                            name="email" required>
+                            name="email" required readonly value=<?php echo $email ?>>
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
-                    <div class="mb-2">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
-                    </div>
-                    <div class="mb-2 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isRememberChecked">
-                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-                    </div>
-                    <div class="mb-2">
-                        <h7>Already have an account?</h7>
-                        <h7><a href="login.html">Log in</a></h7>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Register</button>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
                 </form>
 
             </div>
