@@ -1,6 +1,5 @@
 <?php
 include '../backend/profile_data.php';
-echo $name;
 ?>
 
 <!DOCTYPE html>
@@ -29,31 +28,31 @@ echo $name;
 
                 <form>
                     <div class="mb-4 text-center">
-                        <h5>User Profile of <?php echo $name ?> </h5>
+                        <h5>User Profile of "<?php echo $name ?>" </h5>
                     </div>
                     <div class="mb-2">
                         <label for="exampleInputName" class="form-label">Full Name</label>
                         <input type="name" class="form-control" id="exampleInputName" name="name" required readonly
-                            value=<?php echo htmlentities($name); ?>>
+                            value="<?php echo $name; ?>">
                     </div>
                     <br>
-                    <div class="row mb-2">
+                    <div class=" row mb-2">
                         <div class="col-md-6">
                             <label for="exampleInputDegree" class="form-label">Degree</label>
                             <input type="text" class="form-control" id="exampleInputDegree" name="degree" required
-                                readonly value=<?php echo $degree ?>>
+                                readonly value="<?php echo $degree ?>">
                         </div>
                         <div class="col-md-6">
                             <label for="exampleInputSpecialism" class="form-label">Specialism</label>
                             <input type="text" class="form-control" id="exampleInputSpecialism" name="specialism"
-                                required readonly value=<?php echo $specialism ?>>
+                                required readonly value="<?php echo $specialism ?>">
                         </div>
                     </div>
                     <br>
                     <div class="mb-2">
                         <label for="exampleInputEmail" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail" name="email" required readonly
-                            value=<?php echo $email ?>>
+                            value="<?php echo $email ?>">
                     </div>
                     <br>
                     <button type="button" class="btn btn-primary" onclick="window.location.href='edit_profile.php'">Edit

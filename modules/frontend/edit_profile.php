@@ -34,7 +34,7 @@ include '../backend/profile_data.php';
                     <div class="mb-2">
                         <label for="exampleInputName" class="form-label">Full Name</label>
                         <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp"
-                            name="name" required value=<?php echo $name ?>>
+                            name="name" required value="<?php echo $name ?>">
                         <div id="nameHelp" class="form-text">Name as per your NID Card or Certificates</div>
                     </div>
                     <br>
@@ -42,19 +42,19 @@ include '../backend/profile_data.php';
                         <div class="col-md-6">
                             <label for="exampleInputDegree" class="form-label">Degree</label>
                             <input type="text" class="form-control" id="exampleInputDegree" name="degree" required
-                                value=<?php echo $degree ?>>
+                                value="<?php echo $degree ?>">
                         </div>
                         <div class="col-md-6">
                             <label for="exampleInputSpecialism" class="form-label">Specialism</label>
                             <input type="text" class="form-control" id="exampleInputSpecialism" name="specialism"
-                                required value=<?php echo $specialism ?>>
+                                required value="<?php echo $specialism ?>">
                         </div>
                     </div>
                     <br>
                     <div class="mb-2">
                         <label for="exampleInputEmail" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"
-                            name="email" required readonly value=<?php echo $email ?>>
+                            name="email" required readonly value="<?php echo $email ?>">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <br>
