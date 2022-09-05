@@ -12,7 +12,7 @@ include '../backend/profile_data.php';
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
 
     <!-- Title -->
-    <title>Update Profile</title>
+    <title>Assign Medicine</title>
 
     <link rel="stylesheet" href="../css/authenticate.css">
 
@@ -55,7 +55,7 @@ include '../backend/profile_data.php';
                         <label for="exampleInputEmail" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"
                             name="email" required readonly value="<?php echo $email ?>">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        <div id="emailHelp" class="form-text">You can't change your registered email address.</div>
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary">Update Profile</button>
@@ -68,8 +68,7 @@ include '../backend/profile_data.php';
     </div>
 
     <script src="../../bootstrap/js/others/jquery-3.5.1.slim.min.js"></script>
-    <script src="../../bootstrap/js/others/popper.min.js"></script>
-    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

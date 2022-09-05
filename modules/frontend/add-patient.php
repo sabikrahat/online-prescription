@@ -12,7 +12,7 @@ include '../backend/profile_data.php';
     <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
 
     <!-- Title -->
-    <title>Profile</title>
+    <title>Add Patient</title>
 
     <link rel="stylesheet" href="../css/authenticate.css">
 
@@ -55,7 +55,7 @@ include '../backend/profile_data.php';
                             value="<?php echo $email ?>">
                     </div>
                     <br>
-                    <button type="button" class="btn btn-primary" onclick="window.location.href='edit-profile.php'">Edit
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='edit_profile.php'">Edit
                         Profile</button>
                 </form>
 

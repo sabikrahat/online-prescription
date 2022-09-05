@@ -10,10 +10,11 @@
     <title>Online Prescription</title>
 
     <link rel="icon" type="image/x-icon" href="../assets/icon.png">
+    <link rel="stylesheet" href="../css/home.css">
 
 </head>
 
-<body style="margin-bottom: 100px;">
+<body>
 
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-light">
@@ -36,23 +37,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="profile.php">Profile</a>
                     </li>
-                    <!-- <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Dropdown
+                            Add Record
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="add-patient.php">Add Patient</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="add-medicine.php">Add Medicine</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li> -->
+                        <a class="nav-link" href="assign-medicine.php">Assign Medicine</a>
+                    </li>
                 </ul>
                 <form method="POST" action="../backend/logout.php">
                     <button class="btn btn-outline-danger" type="submit">Logout</button>
@@ -104,7 +104,18 @@
                 <h2 class="text-center">Online Prescription</h2>
                 <p class="text-center" style="font-size: 20px;">Making Patient Care Effective & Efficient</p><br>
                 <br>
-                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="custom-container">
+                            Column
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="custom-container">
+                            Column
+                        </div>
+                    </div>
+                </div>
 
                 <!-- end of main body -->
 
@@ -112,9 +123,10 @@
         </div>
     </div>
 
-    <script src="../../bootstrap/js/others/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="../../bootstrap/js/others/jquery-3.5.1.slim.min.js"></script>
     <script src="../../bootstrap/js/others/popper.min.js"></script>
-    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../bootstrap/js/bootstrap.min.js"></script> -->
 </body>
 
 </html>

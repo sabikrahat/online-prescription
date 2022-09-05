@@ -1,6 +1,6 @@
 <?php
 
-include 'modules/php/components/create_db_and_table.php';
+include 'modules/backend/components/create_db_and_table.php';
 
 session_start();
 

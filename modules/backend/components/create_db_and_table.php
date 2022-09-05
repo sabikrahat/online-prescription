@@ -37,7 +37,7 @@ if (!$conn) {
 
 echo "Connected successfully with database.<br>";
 
-$create_user_table_sql = "CREATE TABLE IF NOT EXISTS users (
+$create_table_sql = "CREATE TABLE IF NOT EXISTS users (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30) NOT NULL,
     degree VARCHAR(20) NOT NULL,
@@ -45,10 +45,29 @@ $create_user_table_sql = "CREATE TABLE IF NOT EXISTS users (
     email VARCHAR(50) NOT NULL,
     password VARCHAR(50) NOT NULL,
     reg_date TIMESTAMP
-)";
+);";
 
-if (mysqli_query($conn, $create_user_table_sql)) {
-    echo "Table users created successfully";
+$create_table_sql .= "CREATE TABLE IF NOT EXISTS patients (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    description VARCHAR(1024) NOT NULL,
+    reg_date TIMESTAMP
+);";
+
+$create_table_sql .= "CREATE TABLE IF NOT EXISTS medicines (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(30) NOT NULL,
+    description VARCHAR(1024) NOT NULL,
+    uses VARCHAR(1024) NOT NULL,
+    sideeffects VARCHAR(1024) NOT NULL,
+    dosage VARCHAR(1024) NOT NULL,
+    reg_date TIMESTAMP
+);";
+
+if (mysqli_multi_query($conn, $create_table_sql)) {
+    echo "Tables created successfully";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
