@@ -1,5 +1,5 @@
 <?php
-include '../backend/profile_data.php';
+include '../backend/profile-data.php';
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ include '../backend/profile_data.php';
         <div class="custom-center">
             <div class="rounded-card container square-box d-flex justify-content-center align-items-center">
 
-                <form method="POST" action="../backend/update_profile.php">
+                <form method="POST" action="../backend/update-profile.php">
                     <div class="mb-4 text-center">
                         <h5>Update your Profile Carefully </h5>
                     </div>

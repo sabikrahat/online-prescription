@@ -1,6 +1,6 @@
 .custom-container {
   border: 3px solid grey;
-  border-radius: 10px;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;

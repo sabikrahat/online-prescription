@@ -1,10 +1,10 @@
 <?php
 
+include 'components/connection.php';
+
 session_start();
 
 if (isset($_SESSION['email'])) {
-
-    include 'components/connection.php';
 
     $table = "users";
     $conn = make_connection();
@@ -13,7 +13,7 @@ if (isset($_SESSION['email'])) {
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) < 0) {
-        show_alert("Something went wrong! User data not found!");
+        show_alert("Something went wrong! User data not found!", "../frontend/home.php");
         die("Something went wrong! User data not found!");
     }
     $row = mysqli_fetch_assoc($result);
@@ -26,6 +26,5 @@ if (isset($_SESSION['email'])) {
 
     mysqli_close($conn);
 } else {
-    show_alert("You are not logged in!");
-    header("location: modules/frontend/login.html");
+    show_alert("You are not logged in!", "../frontend/login.html");
 }

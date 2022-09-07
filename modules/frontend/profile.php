@@ -1,5 +1,5 @@
 <?php
-include '../backend/profile_data.php';
+include '../backend/profile-data.php';
 ?>
 
 <!DOCTYPE html>

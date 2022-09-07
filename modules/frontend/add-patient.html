@@ -1,7 +1,3 @@
-<?php
-include '../backend/profile_data.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,37 +22,35 @@ include '../backend/profile_data.php';
         <div class="custom-center">
             <div class="rounded-card container square-box d-flex justify-content-center align-items-center">
 
-                <form>
+                <form method="POST" action="../backend/add-paitent.php">
                     <div class="mb-4 text-center">
-                        <h5>User Profile of "<?php echo $name ?>" </h5>
+                        <h5>Add a new Patient</h5>
                     </div>
                     <div class="mb-2">
                         <label for="exampleInputName" class="form-label">Full Name</label>
-                        <input type="name" class="form-control" id="exampleInputName" name="name" required readonly
-                            value="<?php echo $name; ?>">
+                        <input type="name" class="form-control" id="exampleInputName" name="name" required>
                     </div>
                     <br>
                     <div class=" row mb-2">
                         <div class="col-md-6">
-                            <label for="exampleInputDegree" class="form-label">Degree</label>
-                            <input type="text" class="form-control" id="exampleInputDegree" name="degree" required
-                                readonly value="<?php echo $degree ?>">
+                            <label for="exampleInputEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail" name="email" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="exampleInputSpecialism" class="form-label">Specialism</label>
-                            <input type="text" class="form-control" id="exampleInputSpecialism" name="specialism"
-                                required readonly value="<?php echo $specialism ?>">
+                            <label for="exampleInputPhone" class="form-label">Phone Number</label>
+                            <input type="phone" class="form-control" id="exampleInputPhone" name="phone" required>
                         </div>
                     </div>
                     <br>
                     <div class="mb-2">
-                        <label for="exampleInputEmail" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail" name="email" required readonly
-                            value="<?php echo $email ?>">
+                        <label for="exampleFormControlTextarea1">Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="description"
+                            required></textarea>
                     </div>
                     <br>
-                    <button type="button" class="btn btn-primary" onclick="window.location.href='edit_profile.php'">Edit
-                        Profile</button>
+                    <button type="submit" class="btn btn-primary">Save
+                        Data
+                    </button>
                 </form>
 
             </div>

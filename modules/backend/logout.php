@@ -1,5 +1,7 @@
 <?php
 
+include 'components/alert.php';
+
 session_start();
 session_destroy();
-header("location: ../frontend/login.html");
+show_alert("You are logged out.", "../frontend/login.html");

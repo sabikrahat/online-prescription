@@ -13,10 +13,10 @@ $email = $_POST['email'];
 $sql = "UPDATE $table SET name = '$name', degree = '$degree', specialism = '$specialism' WHERE email = '$email'";
 
 if (mysqli_query($conn, $sql)) {
-    header("location: ../frontend/home.html");
+    show_alert("Profile updated successfully.", "../frontend/home.php");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    show_alert("Error: " . $sql . "<br>" . mysqli_error($conn));
+    show_alert("Error: " . $sql . "<br>" . mysqli_error($conn), "../frontend/edit-profile.php");
 }
 
 mysqli_close($conn);

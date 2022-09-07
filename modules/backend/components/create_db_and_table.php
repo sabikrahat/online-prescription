@@ -53,16 +53,18 @@ $create_table_sql .= "CREATE TABLE IF NOT EXISTS patients (
     email VARCHAR(50) NOT NULL,
     phone VARCHAR(15) NOT NULL,
     description VARCHAR(1024) NOT NULL,
+    created_by VARCHAR(50) NOT NULL,
     reg_date TIMESTAMP
 );";
 
 $create_table_sql .= "CREATE TABLE IF NOT EXISTS medicines (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
-    description VARCHAR(1024) NOT NULL,
     uses VARCHAR(1024) NOT NULL,
     sideeffects VARCHAR(1024) NOT NULL,
     dosage VARCHAR(1024) NOT NULL,
+    description VARCHAR(1024) NOT NULL,
+    created_by VARCHAR(50) NOT NULL,
     reg_date TIMESTAMP
 );";
 
