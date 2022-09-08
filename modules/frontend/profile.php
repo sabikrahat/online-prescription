@@ -27,6 +27,13 @@ include '../backend/profile-data.php';
             <div class="rounded-card container square-box d-flex justify-content-center align-items-center">
 
                 <form>
+                    <div class="mb-2">
+                        <div class="container" style="justify-content: center; align-items: center; display: flex;">
+                            <img style="border-radius: 50%; border: 3px solid #0b5ed7;"
+                                src="<?php echo '../../' . $img_path ?>" width="150" height="150"
+                                alt="<?php echo $name ?>">
+                        </div>
+                    </div>
                     <div class="mb-4 text-center">
                         <h5>User Profile of "<?php echo $name ?>" </h5>
                     </div>

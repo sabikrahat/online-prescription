@@ -23,7 +23,7 @@
         <div class="custom-center">
             <div class="rounded-card container square-box d-flex justify-content-center align-items-center">
 
-                <form method="POST" action="../backend/register.php">
+                <form method="POST" action="../backend/register.php" enctype="multipart/form-data">
                     <div class="mb-4 text-center">
                         <h5>Register yourself to Start your Journey</h5>
                     </div>
@@ -53,6 +53,10 @@
                     <div class="mb-2">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Choose a photo</label>
+                        <input class="form-control" type="file" id="formFile" name="pick-image" required>
                     </div>
                     <div class="mb-2 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isRememberChecked">

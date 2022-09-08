@@ -12,6 +12,14 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $isRemember = $_POST['isRememberChecked'] ?? false;
 
+$img = $_FILES['pick-image']['name'];
+$img_type = $_FILES['pick-image']['type'];
+$img_size = $_FILES['pick-image']['size'];
+$img_tmp = $_FILES['pick-image']['tmp_name'];
+$img_store = $_SERVER['DOCUMENT_ROOT'] . "/cse479-project/online-prescription/db_uploads/" . $img;
+
+move_uploaded_file($img_tmp, $img_store);
+
 $email_check = "SELECT * FROM $table WHERE email = '$email'";
 
 $email_query = mysqli_query($conn, $email_check);
@@ -19,7 +27,7 @@ $email_query = mysqli_query($conn, $email_check);
 if ((mysqli_num_rows($email_query)) > 0) {
     show_alert("Email already exists.", "../frontend/register.html");
 } else {
-    $sql = "INSERT INTO $table (name, degree, specialism, email, password) VALUES ('$name', '$degree', '$specialism', '$email', '$password', )";
+    $sql = "INSERT INTO $table (name, degree, specialism, email, password, img_path) VALUES ('$name', '$degree', '$specialism', '$email', '$password', '$img')";
 
     if (mysqli_query($conn, $sql)) {
         session_start();

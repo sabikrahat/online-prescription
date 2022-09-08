@@ -1,5 +1,5 @@
 <?php
-include '../backend/profile_data.php';
+include '../backend/assign-medicine-data.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ include '../backend/profile_data.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/x-icon" href="../assets/icon.png">
-    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Title -->
     <title>Assign Medicine</title>
@@ -27,38 +27,52 @@ include '../backend/profile_data.php';
         <div class="custom-center">
             <div class="rounded-card container square-box d-flex justify-content-center align-items-center">
 
-                <form method="POST" action="../backend/update_profile.php">
+                <form method="POST" action="../backend/assign-medicine-backend.php">
                     <div class="mb-4 text-center">
-                        <h5>Update your Profile Carefully </h5>
+                        <h5>Assign Medicine Carefully </h5>
                     </div>
                     <div class="mb-2">
-                        <label for="exampleInputName" class="form-label">Full Name</label>
-                        <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp"
-                            name="name" required value="<?php echo $name ?>">
-                        <div id="nameHelp" class="form-text">Name as per your NID Card or Certificates</div>
+                        <label for="exampleInputName" class="form-label">Patient</label>
+                        <select class="form-select" aria-label="Default select example" id="exampleInputName"
+                            aria-describedby="nameHelp" required name="patient">
+                            <option selected disabled>Open this to select patient</option>
+                            <?php
+                            if (mysqli_num_rows($res_patient) < 0) {
+                                echo "0 results";
+                            } else {
+                                while ($row = mysqli_fetch_assoc($res_patient)) {
+                                    echo "<option value='" . $row['email'] . "'>" . $row['name'] . ' (' . $row['email'] . ')' . "</option>";
+                                }
+                            }
+                            ?>
+                        </select>
+                        <div id="nameHelp" class="form-text">Select patient whom you want to prescribed medicine</div>
                     </div>
-                    <br>
-                    <div class="row mb-2">
-                        <div class="col-md-6">
-                            <label for="exampleInputDegree" class="form-label">Degree</label>
-                            <input type="text" class="form-control" id="exampleInputDegree" name="degree" required
-                                value="<?php echo $degree ?>">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="exampleInputSpecialism" class="form-label">Specialism</label>
-                            <input type="text" class="form-control" id="exampleInputSpecialism" name="specialism"
-                                required value="<?php echo $specialism ?>">
-                        </div>
-                    </div>
-                    <br>
                     <div class="mb-2">
-                        <label for="exampleInputEmail" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"
-                            name="email" required readonly value="<?php echo $email ?>">
-                        <div id="emailHelp" class="form-text">You can't change your registered email address.</div>
+                        <label for="exampleInputName1" class="form-label">Medicine</label>
+                        <select class="form-select" aria-label="Default select example" id="exampleInputName1"
+                            aria-describedby="nameHelp" required name="medicine">
+                            <option selected disabled>Open this to select medicine</option>
+                            <?php
+                            if (mysqli_num_rows($res_medicine) < 0) {
+                                echo "0 results";
+                            } else {
+                                while ($row = mysqli_fetch_assoc($res_medicine)) {
+                                    echo "<option value='" . $row['title'] . "'>" . $row['title'] . ' (' . $row['dosage'] . ')' . "</option>";
+                                }
+                            }
+                            ?>
+                        </select>
+                        <div id="nameHelp" class="form-text">Select medicine which you want to prescribed to that
+                            patient</div>
+                    </div>
+                    <div class="mb-2">
+                        <label for="exampleFormControlTextarea4">Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea4" rows="4" name="description"
+                            required></textarea>
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                    <button type="submit" class="btn btn-primary">Assign</button>
                 </form>
 
             </div>
@@ -67,7 +81,7 @@ include '../backend/profile_data.php';
         <!-- end of main body -->
     </div>
 
-    <script src="../../bootstrap/js/others/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

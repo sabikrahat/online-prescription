@@ -22,6 +22,7 @@ if (isset($_SESSION['email'])) {
     $specialism = $row['specialism'];
     $email = $row['email'];
     $password = $row['password'];
+    $img_path = 'db_uploads/' . $row['img_path'];
 
 
     mysqli_close($conn);

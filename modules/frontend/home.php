@@ -4,14 +4,13 @@ include '../backend/home-data.php';
 
 <script>
 function patientDescription(x) {
-    window.location.href = "../frontend/view-patient.php?id=" + x.rowIndex;
+    window.location.href = "../frontend/view-patient.php?id=" + x;
 }
 
 function medicineDescription(x) {
-    window.location.href = "../frontend/view-medicine.php?id=" + x.rowIndex;
+    window.location.href = "../frontend/view-medicine.php?id=" + x;
 }
 </script>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +18,7 @@ function medicineDescription(x) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Title -->
     <title>Online Prescription</title>
@@ -51,13 +50,7 @@ function medicineDescription(x) {
                     <li class="nav-item">
                         <a class="nav-link" href="profile.php">Profile</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="add-patient.html">Add Patient</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="add-medicine.html">Add Medicine</a>
-                    </li>
-                    <!-- <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Add Record
@@ -69,10 +62,25 @@ function medicineDescription(x) {
                             </li>
                             <li><a class="dropdown-item" href="add-medicine.html">Add Medicine</a></li>
                         </ul>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="assign-medicine.php">Assign Medicine</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Assign
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="assign-medicine.php">Assign Medicine</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="see-assigned-medicines.php">See Assigned Medicine</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <button type="button" class="btn btn-outline-success" onclick="window.print()">Print
+                            Data</button>
+                    </li> -->
                 </ul>
                 <form method="POST" action="../backend/logout.php">
                     <button class="btn btn-outline-danger" type="submit">Logout</button>
@@ -163,7 +171,7 @@ function medicineDescription(x) {
                                 <tbody>
                                     <?php
                                         while ($row = mysqli_fetch_assoc($result_patients)) {
-                                            echo "<tr style='padding-left: 2px; padding-right: 2px;' onclick='patientDescription(this)'>";
+                                            echo "<tr style='padding-left: 2px; padding-right: 2px;' onclick='patientDescription(" . $row['id'] . ")'>";
                                             echo "<th scope='row' style='overflow:hidden; white-space:nowrap'>" . $row['id'] . "</th>";
                                             echo "<td style='overflow:hidden; white-space:nowrap; cursor: pointer;'>" . $row['name'] . "</td>";
                                             echo "<td style='overflow:hidden; white-space:nowrap'>" . $row['email'] . "</td>";
@@ -200,7 +208,7 @@ function medicineDescription(x) {
                                 <tbody>
                                     <?php
                                         while ($row = mysqli_fetch_assoc($result_medicines)) {
-                                            echo "<tr style='padding-left: 2px; padding-right: 2px;' onclick='medicineDescription(this)'>";
+                                            echo "<tr style='padding-left: 2px; padding-right: 2px;' onclick='medicineDescription(" . $row['id'] . ")'>";
                                             echo "<th scope='row' style='overflow:hidden; white-space:nowrap'>" . $row['id'] . "</th>";
                                             echo "<td style='overflow:hidden; white-space:nowrap'>" . $row['title'] . "</td>";
                                             echo "<td style='overflow:hidden; white-space:nowrap'>" . $row['uses'] . "</td>";
@@ -224,10 +232,7 @@ function medicineDescription(x) {
         </div>
     </div>
 
-    <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="../../bootstrap/js/others/jquery-3.5.1.slim.min.js"></script>
-    <script src="../../bootstrap/js/others/popper.min.js"></script>
-    <script src="../../bootstrap/js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

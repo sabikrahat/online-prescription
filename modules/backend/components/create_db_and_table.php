@@ -44,6 +44,7 @@ $create_table_sql = "CREATE TABLE IF NOT EXISTS users (
     specialism VARCHAR(20) NOT NULL,
     email VARCHAR(50) NOT NULL,
     password VARCHAR(50) NOT NULL,
+    img_path VARCHAR(50) NOT NULL,
     reg_date TIMESTAMP
 );";
 
@@ -63,6 +64,15 @@ $create_table_sql .= "CREATE TABLE IF NOT EXISTS medicines (
     uses VARCHAR(1024) NOT NULL,
     sideeffects VARCHAR(1024) NOT NULL,
     dosage VARCHAR(1024) NOT NULL,
+    description VARCHAR(1024) NOT NULL,
+    created_by VARCHAR(50) NOT NULL,
+    reg_date TIMESTAMP
+);";
+
+$create_table_sql .= "CREATE TABLE IF NOT EXISTS assigns_tb (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    patient VARCHAR(30) NOT NULL,
+    medicine VARCHAR(30) NOT NULL,
     description VARCHAR(1024) NOT NULL,
     created_by VARCHAR(50) NOT NULL,
     reg_date TIMESTAMP
